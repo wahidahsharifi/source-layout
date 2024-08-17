@@ -1,0 +1,236 @@
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    max-width: 1500px;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+}
+
+
+/**************header**************/
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 0 40px;
+}
+header>a{
+    font-size: 30px;
+}
+#menu{
+    display: none;
+}
+.menu{
+    display: none;
+}
+.menu>div{
+    width: 40px;
+    height: 5px;
+    background-color: #000;
+    margin: 5px;
+}
+.menu>*{
+    position: relative;
+    transition-duration: .5s;
+}
+#menu:checked+.menu>.one{
+    transform: rotateZ(45deg) translate(15px, 5px);
+    background-color: #f00;
+}
+#menu:checked+.menu>.two{
+    transform: rotateZ(-45deg) translate(2px, 8px);
+    background-color: #f00;
+}
+#menu:checked+.menu>.three{
+    transform: translateX(20px);
+    background-color: rgba(195, 45, 45, 0);
+}
+.hd{
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.h-nav>a{
+    padding: 0 15px;
+    color: rgb(102,118,138);
+}
+.button{
+    width: 110px;
+    height: 35px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 35px;
+    color: aliceblue;
+    background-color: black;
+}
+
+
+/**************main**************/
+
+.impo-section{
+    display: flex;
+    justify-content: space-between;
+}
+.impo-section>div{
+    width: 50%;
+}
+.impo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.impo-first{
+    width: 320px;
+}
+.impo-first>span{
+    font-size: 13px;
+}
+h1{
+    font-size: 35px;
+    margin: 20px 0;
+}
+input{
+    width: 71.5%;
+    height: 35px;
+    background-color: #e2eaf0;
+    padding-left: 10px;
+    border: none;
+    margin: 0;
+    outline: none;
+}
+input::placeholder{
+    padding-left: 10px;
+}
+.btn{
+    position: relative;
+    color: #fff;
+    background-color: black;
+    padding: 8.3px 20px;
+    margin: 0;
+    right: 4.3px;
+    top: 1px;
+}
+.impo-first>p{
+    font-size: 15px;
+}
+.impo-section img{
+    width: 100%;
+}
+
+/**************last**************/
+
+h2::before{
+    content: "feature ";
+}
+.last p::after{
+    content: "In such a test, the user performs realistic tasks by interacting with the paper prototype";
+}
+.last span::after{
+    content: " link";
+}
+.last{
+    display: grid;
+    padding-bottom: 50px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin: 0 20px;
+}
+
+h2{
+    font-size: 20px;
+}
+h2:hover, .last span:hover{
+    cursor: pointer;
+    text-decoration: 1px underline #000;
+}
+.last span{
+    font-size: 15px;
+    font-weight: 600;
+}
+.last>div>div{
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 10%;
+    width: 50px;
+    height: 50px;
+}
+
+/**************media**************/
+
+@media screen and (max-width: 1000px) {
+    .last{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 840px){
+    header{
+        height: auto;
+        display: block;
+        padding: 0;
+        border-bottom: 1px solid black;
+    }
+    header>a{
+        float: right;
+        padding: 5px 40% 0 0;
+    }
+    .menu{
+        display: inline-block;
+    }
+    #menu:checked~.hd{
+        display: block;
+    }
+    .hd{
+        margin-top: 20px;
+        width: 100%;
+        display: none;
+        clear: both;
+    }
+    .h-nav>a{
+        display: block;
+        font-size: 20px;
+        line-height: 40px;
+        text-align: center;
+    }
+    .button{
+        display: block;
+        width: 80%;
+        line-height: 35px;
+        margin: 30px 10%;
+        border-radius: 5px;
+    }
+
+
+
+    .impo-section{
+        display: block;
+        padding-top: 50px;
+    }
+    .impo-section>div{
+        width: 100%;
+    }
+    .impo-first{
+        width: 95%;
+    }
+    input{
+        width: 100%;
+    }
+    .btn{
+        display: block;
+        position: static;
+        text-align: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .last{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 40px;
+    }
+}
