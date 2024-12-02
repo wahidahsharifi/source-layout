@@ -191,12 +191,16 @@ h2:hover, .last span:hover{
         display: inline-block;
     }
     #menu:checked~.hd{
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: max(100svh, 250px);
     }
     .hd{
         margin-top: 20px;
         width: 100%;
         display: none;
+        height: 0;
         clear: both;
     }
     .h-nav>a{
